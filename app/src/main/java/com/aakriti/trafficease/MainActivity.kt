@@ -19,17 +19,18 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         title ="Log In"
-        admin_id=findViewById(R.id.admin_id);
+
+        admin_id=findViewById(R.id.admin_id)
         password_id=findViewById(R.id.password_id)
         login_id=findViewById(R.id.login_id)
 
-
+        val admin=admin_id.text.toString()
+        val pass =password_id.text.toString()
 
         login_id.setOnClickListener{
-            val admin=admin_id.text.toString()
-            val pass =password_id.text.toString()
-
-            if((admin==validadmin_id) && (pass==validpassword))
+           val intent = Intent(this@MainActivity, report_activity::class.java)
+            startActivity(intent)
+            /*if(admin==validadmin_id && pass==validpassword)
             {
                 val intent = Intent(this@MainActivity, report_activity::class.java)
                 startActivity(intent)
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity(){
            else
             {
                 Toast.makeText(this@MainActivity,"Wrong Credentials!", Toast.LENGTH_LONG).show()
-            }
+            }*/
 
         }
 
